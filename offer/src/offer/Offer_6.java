@@ -1,8 +1,8 @@
 package offer;
-
 import java.util.ArrayList;
 import java.util.Stack;
-
+//ä»å°¾åˆ°å¤´æ‰“å°é“¾è¡¨
+//æœ‰ä¸‰ç§æ–¹æ³• é€’å½’  å †æ ˆ  å¤´ç»“ç‚¹
 class ListNode{
 	int data;
 	ListNode next=null;
@@ -13,49 +13,42 @@ class ListNode{
 }
 
 public class Offer_6 {
-	//µü´ú·¨
+	//è¿­ä»£æ³•
 	public void printListFromTaiToHead(ListNode listNode){
-	
-		if(listNode.next!=null) {
-			printListFromTaiToHead(listNode.next);
-		}
-		System.out.println(listNode.data);
-		
-	
+	 while(listNode!=null){
+	 printListFromTailToHead(listNode.next);
+	 }
+		System.out.print(listNode.data);
 	}
-	//¶ÑÕ»·¨
+	//å †æ ˆæ³•
 	public void printStack(ListNode listNode) {
-		Stack<ListNode> stack=new Stack<>();
-		while(listNode!=null) {
-			stack.push(listNode);
-			listNode=listNode.next;
+		Stack<ListNode> s=new Stack<>();
+		while(listNode!=null){
+		s.push(listNode.next);
 		}
-		while(!stack.isEmpty()) {
-			System.out.println(stack.pop().data);
+		while(!s.isEmpty()){
+		System.out.print(s.poll().data);
 		}
+		
 		
 	}
-	//Í·½áµãµÄ·½·¨
-	//Í·½áµãÊµÔÚÍ·²åÈë·¨ÖĞÊ¹ÓÃµÄÒ»¸ö¶îÍâµÄ½Úµã£¬Õâ¸ö½Úµã²»´æ´¢Öµ
-	//µÚÒ»¸ö½Úµã¾ÍÊÇÁ´±íµÄµÚÒ»¸öÕæÕı´æ´¢µÄ½Úµã
+	//å¤´ç»“ç‚¹çš„æ–¹æ³•
+	//å¤´ç»“ç‚¹å®åœ¨å¤´æ’å…¥æ³•ä¸­ä½¿ç”¨çš„ä¸€ä¸ªé¢å¤–çš„èŠ‚ç‚¹ï¼Œè¿™ä¸ªèŠ‚ç‚¹ä¸å­˜å‚¨å€¼
+	//ç¬¬ä¸€ä¸ªèŠ‚ç‚¹å°±æ˜¯é“¾è¡¨çš„ç¬¬ä¸€ä¸ªçœŸæ­£å­˜å‚¨çš„èŠ‚ç‚¹
 	public void printHeadNode(ListNode listNode) {
-		ListNode head=new ListNode(-1);
-		while(listNode!=null) {
-			ListNode memo=listNode.next;
-			listNode.next=head.next;
-			head.next=listNode;
-			listNode=memo;
+		
+		ListNode pNode=new ListNode(-1);//å¤´ç»“ç‚¹
+		while(listNode!=null){
+		    ListNode tmp=listNode.next;
+			     listNode.next=pNode.nenxt;
+			pNode.next=listNode;
+			listNode=tmp;}
+		
+		pNode=pNode.next;
+		while(pNode!=null){
+		System.out.println(pNode.next);
 		}
 		
-		 ArrayList<Integer> ret = new ArrayList<>();
-		    head = head.next;
-		    while (head != null) {
-		        ret.add(head.data);
-		        head = head.next;
-		    }
-		    for(Integer a:ret) {
-		    	System.out.println(a);
-		    }
 		
 	}
 	
@@ -67,11 +60,11 @@ public class Offer_6 {
 		node1.next=node2;
 		node2.next=node3;
 		Offer_6 offer=new Offer_6();
-        offer.printListFromTaiToHead(node1);//µü´ú
+        offer.printListFromTaiToHead(node1);//è¿­ä»£
         System.out.println("#############");
-        offer.printStack(node1);//¶ÑÕ»
+        offer.printStack(node1);//å †æ ˆ
         System.out.println("#############");
-        offer.printHeadNode(node1);//Í·½áµã
+        offer.printHeadNode(node1);//å¤´ç»“ç‚¹
 
 	}
 
