@@ -1,24 +1,28 @@
 package offer;
-
+/*给定一个二维数组，其每一行从左到右递增排序，
+从上到下也是递增排序。给定一个数，判断这个数是否在该二维数
+组中
+*/
+//时间复杂度O(M+N) 空间复杂度O(1)
+//根据矩阵本身的特性 从右上角的元素开始和target进行比较 下面的都大 左面的都小
 public class Offer_4 {
 	public boolean searchEle(int[][]a,int target) {
-		//a.length:��
-		//a[0].length:��
-	if(a==null||a.length<0||a[0].length<0)
-		return false;
-	int c=a[0].length-1;
-	int r=0;
-	while(c>=0&&r<a.length) {
-		if(target>a[r][c])
-			r++;
-		else
-			if(target<a[r][c])
-				c--;
+	 if(a==null||a.length==0||a[0].length==0)
+		 return false;
+		int r=0;
+		int c=a[0].length-1;
+		while(r<a.length&&c>=0){
+		   if(a[r][c]==target)
+			   return true;
+			else if(a[r][c]<target)
+				r++;
 			else
-				return true;
+				c--;
+		}
+		return false;
 	}
-	return false;
-	}
+		
+	
 	
 	
 	public static void main(String[] args) {
