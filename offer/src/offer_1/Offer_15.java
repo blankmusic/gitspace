@@ -1,12 +1,12 @@
 package offer_1;
-//¶ş½øÖÆÖĞÒ»µÄ¸öÊı
+//äºŒè¿›åˆ¶ä¸­ä¸€çš„ä¸ªæ•°
 public class Offer_15 {
-  //  °´Î»ÓëËã·¨ Ë«1²ÅÊÇ1 
+  //  æŒ‰ä½ä¸ç®—æ³• åŒ1æ‰æ˜¯1 
 	
 	 public void binaryToDecimal(int n){
-		       int t = 0;  //ÓÃÀ´¼ÇÂ¼Î»Êı
-		       int bin = 0; //ÓÃÀ´¼ÇÂ¼×îºóµÄ¶ş½øÖÆÊı
-		       int r = 0;  //ÓÃÀ´´æ´¢ÓàÊı
+		       int t = 0;  //ç”¨æ¥è®°å½•ä½æ•°
+		       int bin = 0; //ç”¨æ¥è®°å½•æœ€åçš„äºŒè¿›åˆ¶æ•°
+		       int r = 0;  //ç”¨æ¥å­˜å‚¨ä½™æ•°
 		       while(n != 0){
 		           r = n % 2;
 		           n = n / 2;
@@ -18,10 +18,11 @@ public class Offer_15 {
 
 	 
 	 public int countB(int n) {
-		 int cnt=0;
-		 while(n!=0) {
-			 cnt++;
-			 n=n&(n-1);
+		int cnt=0;
+		 while(nï¼=0){
+		         cnt++
+			 n&=n-1;
+	         
 		 }
 		 return cnt;
 		 
