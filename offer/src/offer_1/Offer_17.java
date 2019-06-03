@@ -1,36 +1,40 @@
 package offer_1;
-//´òÓ¡´Ó1µ½×î´óµÄnÎ»Êı
-//ÒòÎªÊıÖµ¿ÉÄÜ»á·Ç³£´óËùÒÔ²»ÓÃintÓÃchar
+//æ‰“å°ä»1åˆ°æœ€å¤§çš„nä½æ•°
+//å› ä¸ºæ•°å€¼å¯èƒ½ä¼šéå¸¸å¤§æ‰€ä»¥ä¸ç”¨intç”¨char
+//ä½¿ç”¨å›æº¯ç®—æ³•
 public class Offer_17 {
-	
-	
-	public void  print1ToMax(int n) {
-		if(n<=0)
-			return;
+	public void print1ToMaxOfDigits(int n){
+	if(n<=0)
+		return ;
 		char[] number=new char[n];
-		print1ToMax(number,0);
+		printNumber(number,0);
+	
+	}
+	public void printNumber(char[] number,int digit){
+	
+		if(digit==number.length){
+			printNum(number);
+		       return;
+	}
+		for(int i=0;i<10;i++){
 		
-	}
-	private void print1ToMax(char[] number,int digit) {
-		if(digit==number.length)
-		{
-			printNumber(number);
-			return;
-		}
-		for(int i=0;i<10;i++)
-		{
 			number[digit]=(char)(i+'0');
-			print1ToMax(number, digit+1);
+			printNumber(number,digit+1);
 		}
+	
 	}
-	private void printNumber(char[] number) {
+	public void printNum(char[] number){
+	
 		int index=0;
-		while(index<number.length&&number[index]=='0')
+		
+		while(index<number.length&&number[index]==0)
 			index++;
 		while(index<number.length)
-			 System.out.print(number[index++]);
-	    System.out.println();
+			System.out.print(number[index++]);
+		System.out.println();
 	}
+	
+	
  
 	public static void main(String[] args) {
 		Offer_17 offer=new Offer_17();
