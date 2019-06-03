@@ -10,56 +10,53 @@ class ListNode{
 	
 }
 public class Offer_18 {
-	//É¾³ıÁ´±íÖĞÄ³¸ö½Úµã
+	//åˆ é™¤é“¾è¡¨ä¸­æŸä¸ªèŠ‚ç‚¹
+	//æ—¶é—´å¤æ‚åº¦ä¸ºO(1)
+       //åˆ†ä¸ºä¸¤ç§æƒ…å†µ ä¸€ç§æ˜¯è¢«åˆ é™¤çš„èŠ‚ç‚¹æ˜¯å°¾èŠ‚ç‚¹
+	//ä¸€ç§æ˜¯ä¸€èˆ¬èŠ‚ç‚¹éå°¾éƒ¨
 	public ListNode deleteNode(ListNode head,ListNode tobeDelete) {
-		if(head==null||tobeDelete==null){
-			return null;
-		}
-		if(tobeDelete.next!=null)
-		{
-			ListNode node=tobeDelete.next;
+		if(head==null||tobeDelete==null)
+			return head;
+		if(tobeDelte.next!=null){
+		       ListNode node=tobeDelete.next;
 			tobeDelete.val=node.val;
 			tobeDelete.next=node.next;
-			
-		}else {
-			if(head.next==tobeDelete)
-				head=null;
-			else {
-				
-				ListNode cur=head;
-				while(cur.next!=tobeDelete)
-					cur=cur.next;
-				cur.next=null;
-				
-			}
+		
+		}else{if(head==tobeDelete)
+			head=null;
+		      ListNode cur=head;
+		      while(cur.next!=tobeDelete)
+			      cur=cur.next;
+		      cur.next=null;
 		}
+		
 		return head;
 		
 		
 	}
-	//É¾³ıÁ´±íÖĞµÄÖØ¸´½Úµã
+	//åˆ é™¤é“¾è¡¨ä¸­çš„é‡å¤èŠ‚ç‚¹
 	 public ListNode deleteDuplication(ListNode pHead)
 	    {
 
 
 
-	if (pHead == null || pHead.next == null) { // Ö»ÓĞ0¸ö»ò1¸ö½áµã£¬Ôò·µ»Ø
+	if (pHead == null || pHead.next == null) { // åªæœ‰0ä¸ªæˆ–1ä¸ªç»“ç‚¹ï¼Œåˆ™è¿”å›
 	            return pHead;
 	        }
-	        if (pHead.val == pHead.next.val) { // µ±Ç°½áµãÊÇÖØ¸´½áµã
+	        if (pHead.val == pHead.next.val) { // å½“å‰ç»“ç‚¹æ˜¯é‡å¤ç»“ç‚¹
 	            ListNode pNode = pHead.next;
 	            while (pNode != null && pNode.val == pHead.val) {
-	                // Ìø¹ıÖµÓëµ±Ç°½áµãÏàÍ¬µÄÈ«²¿½áµã,ÕÒµ½µÚÒ»¸öÓëµ±Ç°½áµã²»Í¬µÄ½áµã
+	                // è·³è¿‡å€¼ä¸å½“å‰ç»“ç‚¹ç›¸åŒçš„å…¨éƒ¨ç»“ç‚¹,æ‰¾åˆ°ç¬¬ä¸€ä¸ªä¸å½“å‰ç»“ç‚¹ä¸åŒçš„ç»“ç‚¹
 	                pNode = pNode.next;
 	            }
-	            return deleteDuplication(pNode); // ´ÓµÚÒ»¸öÓëµ±Ç°½áµã²»Í¬µÄ½áµã¿ªÊ¼µİ¹é
-	        } else { // µ±Ç°½áµã²»ÊÇÖØ¸´½áµã
-	            pHead.next = deleteDuplication(pHead.next); // ±£Áôµ±Ç°½áµã£¬´ÓÏÂÒ»¸ö½áµã¿ªÊ¼µİ¹é
+	            return deleteDuplication(pNode); // ä»ç¬¬ä¸€ä¸ªä¸å½“å‰ç»“ç‚¹ä¸åŒçš„ç»“ç‚¹å¼€å§‹é€’å½’
+	        } else { // å½“å‰ç»“ç‚¹ä¸æ˜¯é‡å¤ç»“ç‚¹
+	            pHead.next = deleteDuplication(pHead.next); // ä¿ç•™å½“å‰ç»“ç‚¹ï¼Œä»ä¸‹ä¸€ä¸ªç»“ç‚¹å¼€å§‹é€’å½’
 	            return pHead;
 	        }
 	    }
 
-	//±£ÁôÖØ¸´½ÚµãÖĞµÄÒ»¸ö
+	//ä¿ç•™é‡å¤èŠ‚ç‚¹ä¸­çš„ä¸€ä¸ª
 	 public ListNode deleteDup(ListNode head) 
 	 {
 		 
