@@ -42,8 +42,8 @@ public class Offer_18 {
 		 //如果当前节点是重复节点
 		 if(pHead.val==pHead.next.val){
 		  
-			 ListNode node=pHead;
-			 while(node.val==pHead.val&&node!=null)
+			 ListNode node=pHead.next;
+			 while(node!=null&&node.val==pHead.val)
 				 node=node.next;
 			 return deleteDuplication(node);
 		 }else{
