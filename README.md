@@ -6,10 +6,10 @@
 全部执行成功，要么就一个也不做的机制。
 ## 事务的特性
 数据库的是事务具有以下四个特性<br>
-    原子性（actomicity）
-    一致性（consistency）
-    隔离性（isolation）
-    持久性（durability）
+    1.原子性（actomicity）
+   2. 一致性（consistency）
+   3. 隔离性（isolation）
+    4.持久性（durability）
 
 ## InnoDB事务
 
