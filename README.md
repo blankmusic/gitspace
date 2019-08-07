@@ -5,11 +5,11 @@
 事务提供一种机制，将一个活动涉及的所有操作纳入一个不可分割的执行单元，就是说事务提供一种要么<br>
 全部执行成功，要么就一个也不做的机制。
 ## 事务的特性
-数据库的是事务具有以下四个特性
-原子性（actomicity）
-一致性（consistency）
-隔离性（isolation）
-持久性（durability）
+数据库的是事务具有以下四个特性<br>
+    原子性（actomicity）
+    一致性（consistency）
+    隔离性（isolation）
+    持久性（durability）
 
 ## InnoDB事务
 
